@@ -5,9 +5,9 @@ if(isset($_SESSION["cart"])):
     $now=date('Y-m-d H:i:s');
     $sql="INSERT INTO user_order_product (user_id, order_time) VALUES ('$user_id', '$now') ";
     if ($conn->query($sql) === TRUE) {
-        // echo "新資料輸入成功<br>";
+        echo "新資料輸入成功<br>";
         $order_id = $conn->insert_id;
-        // echo "id 為 $order_id";
+        echo "id 為 $order_id";
         foreach($_SESSION["cart"] as $product):
             $product_id =key($product);
             $value=current($product );
